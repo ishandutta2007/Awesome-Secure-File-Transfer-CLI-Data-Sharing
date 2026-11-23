@@ -64,7 +64,7 @@ Below is a curated comparison of leading SaaS and hosted secure file transfer pl
 
 Curated list of production-ready open-source command-line utilities, self-hosted web servers, and peer-to-peer protocols. Sorted in descending order by GitHub stargazers count with official stargazers badges (`style=social`, `color=white`).
 
-| Repository & Tool | Stars Badge | Language / Stack | Primary Focus & Transfer Protocol |
+| Repository & Tool | Stars_Badge | Language / Stack | Primary Focus & Transfer Protocol |
 | :--- | :--- | :--- | :--- |
 | **[LocalSend](https://github.com/localsend/localsend)** | [![Stars](https://img.shields.io/github/stars/localsend/localsend?style=social&color=white)](https://github.com/localsend/localsend/stargazers) | Flutter / Dart | Open-source AirDrop alternative for cross-platform LAN/Wi-Fi transfers using HTTPS/REST with no internet connection required. |
 | **[Syncthing](https://github.com/syncthing/syncthing)** | [![Stars](https://img.shields.io/github/stars/syncthing/syncthing?style=social&color=white)](https://github.com/syncthing/syncthing/stargazers) | Go | Decentralized, bi-directional, continuous file synchronization across private nodes over encrypted TLS with NAT discovery/relays. |
