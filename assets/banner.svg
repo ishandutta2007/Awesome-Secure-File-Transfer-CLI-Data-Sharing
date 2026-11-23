@@ -55,12 +55,6 @@
       0% { stroke-dashoffset: 400; }
       100% { stroke-dashoffset: 0; }
     }
-    @keyframes packetFly {
-      0% { offset-distance: 0%; opacity: 0; }
-      20% { opacity: 1; }
-      80% { opacity: 1; }
-      100% { offset-distance: 100%; opacity: 0; }
-    }
     @keyframes blinkDot {
       0%, 100% { opacity: 0.2; }
       50% { opacity: 1; }
@@ -129,7 +123,7 @@
     <rect x="20" y="20" width="24" height="24" rx="6" fill="#7e22ce" fill-opacity="0.3" />
     <text x="32" y="37" fill="#c084fc" font-size="14" font-weight="bold" text-anchor="middle">&gt;_</text>
     <text x="56" y="27" fill="#f8fafc" font-size="13" font-weight="600">Zero-Cloud CLI Sharing</text>
-    <text x="56" y="46" fill="#94a3b8" font-size="11">Ephemeral &bull; High Throughput</text>
+    <text x="56" y="46" fill="#94a3b8" font-size="11">Ephemeral &#8226; High Throughput</text>
   </g>
 
   <!-- Foreground Title and Hero Elements (Guaranteed High Contrast & Prominence) -->
@@ -149,7 +143,7 @@
 
     <!-- Subtitle / Tagline -->
     <text x="0" y="166" fill="#cbd5e1" font-size="16" font-weight="400">
-      End-to-End Encrypted P2P Pipes &bull; Zero-Knowledge Cloud &bull; Self-Hosted Transfers
+      End-to-End Encrypted P2P Pipes &#8226; Zero-Knowledge Cloud &#8226; Self-Hosted Transfers
     </text>
 
     <!-- Feature Pills in Hero -->
