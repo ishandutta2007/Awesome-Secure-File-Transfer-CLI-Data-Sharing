@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360" style="background:#090d16; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; border-radius: 12px; overflow: hidden;">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1021" />
+      <stop offset="50%" stop-color="#0e172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+
+    <!-- Accent Glowing Gradients -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="pillGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9" />
+    </linearGradient>
+
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.1" />
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0.1" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <style>
+    /* CSS Keyframe Animations */
+    @keyframes pulseOrb {
+      0% { transform: scale(1) translate(0px, 0px); opacity: 0.3; }
+      50% { transform: scale(1.15) translate(20px, -15px); opacity: 0.55; }
+      100% { transform: scale(1) translate(0px, 0px); opacity: 0.3; }
+    }
+    @keyframes floatCard1 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes floatCard2 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(8px); }
+    }
+    @keyframes dashCycle {
+      0% { stroke-dashoffset: 400; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes packetFly {
+      0% { offset-distance: 0%; opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { offset-distance: 100%; opacity: 0; }
+    }
+    @keyframes blinkDot {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+    .orb-glow {
+      transform-origin: center;
+      animation: pulseOrb 8s ease-in-out infinite;
+    }
+    .flow-line {
+      stroke-dasharray: 8 8;
+      animation: dashCycle 15s linear infinite;
+    }
+    .floating-card-1 {
+      animation: floatCard1 6s ease-in-out infinite;
+    }
+    .floating-card-2 {
+      animation: floatCard2 7s ease-in-out infinite 1s;
+    }
+    .blinking-light {
+      animation: blinkDot 2s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Background Layer -->
+  <rect width="1200" height="360" fill="url(#bgGrad)" />
+
+  <!-- Animated Ambient Orbs in Background -->
+  <g class="orb-glow">
+    <circle cx="200" cy="80" r="140" fill="#38bdf8" filter="url(#glow)" opacity="0.12" />
+    <circle cx="1000" cy="280" r="160" fill="#818cf8" filter="url(#glow)" opacity="0.12" />
+    <circle cx="650" cy="180" r="180" fill="#c084fc" filter="url(#glow)" opacity="0.08" />
+  </g>
+
+  <!-- Subtle Matrix Grid Lines -->
+  <g stroke="#334155" stroke-opacity="0.2" stroke-width="1">
+    <line x1="0" y1="60" x2="1200" y2="60" />
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="200" y1="0" x2="200" y2="360" />
+    <line x1="400" y1="0" x2="400" y2="360" />
+    <line x1="600" y1="0" x2="600" y2="360" />
+    <line x1="800" y1="0" x2="800" y2="360" />
+    <line x1="1000" y1="0" x2="1000" y2="360" />
+  </g>
+
+  <!-- Dynamic Data Stream Highway Across Bottom -->
+  <path d="M -50,300 C 300,340 500,260 850,290 C 1050,310 1150,280 1250,290" 
+        fill="none" stroke="url(#lineGrad)" stroke-width="2.5" class="flow-line" />
+  <path d="M -50,320 C 250,280 600,330 900,280 C 1100,260 1180,310 1250,300" 
+        fill="none" stroke="#818cf8" stroke-opacity="0.2" stroke-width="1.5" class="flow-line" style="animation-direction: reverse; animation-duration: 20s;" />
+
+  <!-- Background Decorative Badge / Pill Right Side 1 -->
+  <g class="floating-card-1" transform="translate(860, 50)" filter="url(#cardShadow)">
+    <rect width="280" height="64" rx="12" fill="url(#pillGrad1)" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5" />
+    <circle cx="32" cy="32" r="12" fill="#0284c7" fill-opacity="0.3" />
+    <circle cx="32" cy="32" r="6" fill="#38bdf8" class="blinking-light" />
+    <text x="56" y="27" fill="#f8fafc" font-size="13" font-weight="600">P2P Encrypted Tunnel</text>
+    <text x="56" y="46" fill="#94a3b8" font-size="11">PAKE / WebRTC / TLS 1.3</text>
+  </g>
+
+  <!-- Background Decorative Badge / Pill Right Side 2 -->
+  <g class="floating-card-2" transform="translate(890, 140)" filter="url(#cardShadow)">
+    <rect width="250" height="64" rx="12" fill="url(#pillGrad1)" stroke="#c084fc" stroke-opacity="0.35" stroke-width="1.5" />
+    <rect x="20" y="20" width="24" height="24" rx="6" fill="#7e22ce" fill-opacity="0.3" />
+    <text x="32" y="37" fill="#c084fc" font-size="14" font-weight="bold" text-anchor="middle">&gt;_</text>
+    <text x="56" y="27" fill="#f8fafc" font-size="13" font-weight="600">Zero-Cloud CLI Sharing</text>
+    <text x="56" y="46" fill="#94a3b8" font-size="11">Ephemeral &bull; High Throughput</text>
+  </g>
+
+  <!-- Foreground Title and Hero Elements (Guaranteed High Contrast & Prominence) -->
+  <g transform="translate(70, 75)">
+    <!-- Category Pill -->
+    <rect width="260" height="30" rx="15" fill="#1e293b" stroke="#475569" stroke-width="1" />
+    <circle cx="16" cy="15" r="4" fill="#10b981" />
+    <text x="28" y="19" fill="#38bdf8" font-size="11.5" font-weight="700" letter-spacing="1">CURATED DEVELOPER ECOSYSTEM</text>
+
+    <!-- Main Title -->
+    <text x="0" y="78" fill="#ffffff" font-size="38" font-weight="800" letter-spacing="-0.5">
+      Secure File Transfer
+    </text>
+    <text x="0" y="124" fill="url(#primaryGrad)" font-size="38" font-weight="800" letter-spacing="-0.5">
+      &amp; CLI Data Sharing
+    </text>
+
+    <!-- Subtitle / Tagline -->
+    <text x="0" y="166" fill="#cbd5e1" font-size="16" font-weight="400">
+      End-to-End Encrypted P2P Pipes &bull; Zero-Knowledge Cloud &bull; Self-Hosted Transfers
+    </text>
+
+    <!-- Feature Pills in Hero -->
+    <g transform="translate(0, 195)">
+      <!-- Pill 1 -->
+      <g>
+        <rect width="130" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+        <text x="65" y="18" fill="#94a3b8" font-size="11.5" font-weight="600" text-anchor="middle">⚡ croc &amp; Wormhole</text>
+      </g>
+      <!-- Pill 2 -->
+      <g transform="translate(142, 0)">
+        <rect width="125" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+        <text x="62" y="18" fill="#94a3b8" font-size="11.5" font-weight="600" text-anchor="middle">🔒 E2EE PAKE / TLS</text>
+      </g>
+      <!-- Pill 3 -->
+      <g transform="translate(279, 0)">
+        <rect width="125" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+        <text x="62" y="18" fill="#94a3b8" font-size="11.5" font-weight="600" text-anchor="middle">🌐 LocalSend &amp; Sync</text>
+      </g>
+      <!-- Pill 4 -->
+      <g transform="translate(416, 0)">
+        <rect width="135" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+        <text x="67" y="18" fill="#94a3b8" font-size="11.5" font-weight="600" text-anchor="middle">🚀 UDP &amp; WebRTC Accel</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Corner Border Accents -->
+  <path d="M 0,20 L 0,0 L 20,0" stroke="#38bdf8" stroke-width="3" fill="none" />
+  <path d="M 1180,0 L 1200,0 L 1200,20" stroke="#c084fc" stroke-width="3" fill="none" />
+  <path d="M 1200,340 L 1200,360 L 1180,360" stroke="#818cf8" stroke-width="3" fill="none" />
+  <path d="M 20,360 L 0,360 L 0,340" stroke="#38bdf8" stroke-width="3" fill="none" />
+</svg>
